@@ -17,6 +17,8 @@ namespace atom {
 // Manage the V8 isolate and context automatically.
 class JavascriptEnvironment {
  public:
+  static void Initialize();
+
   JavascriptEnvironment();
 
   void OnMessageLoopCreated();
@@ -28,9 +30,6 @@ class JavascriptEnvironment {
   }
 
  private:
-  bool Initialize();
-
-  bool initialized_;
   gin::IsolateHolder isolate_holder_;
   v8::Isolate* isolate_;
   v8::Isolate::Scope isolate_scope_;
