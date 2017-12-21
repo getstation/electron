@@ -77,7 +77,7 @@ def main():
       print f.read()
     rm_rf(output_to_file)
 
-
+  print 'test.py exits with exit code', returncode
   return returncode
 
 
