@@ -8,7 +8,7 @@ before_install:
 
 language: node_js
 node_js:
-  - "4"
+  - "6"
 os:
   - osx
 env:
