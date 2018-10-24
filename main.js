@@ -48,3 +48,27 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+
+const iterations = 50;
+const multiplier = 1000000000;
+
+function calculatePrimes(iterations, multiplier) {
+  var primes = [];
+  for (var i = 0; i < iterations; i++) {
+    var candidate = i * (multiplier * Math.random());
+    var isPrime = true;
+    for (var c = 2; c <= Math.sqrt(candidate); ++c) {
+      if (candidate % c === 0) {
+        // not prime
+        isPrime = false;
+        break;
+      }
+    }
+    if (isPrime) {
+      primes.push(candidate);
+    }
+  }
+  return primes;
+}
+setInterval(() => calculatePrimes(iterations, 1000000000),50)
